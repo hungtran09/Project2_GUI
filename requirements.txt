@@ -7,5 +7,5 @@ seaborn
 scikit-learn
 scipy==1.9.3
 underthesea
-pyspark
+pyspark==3.3.1
 streamlit-aggrid
