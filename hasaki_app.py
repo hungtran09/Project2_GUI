@@ -148,7 +148,7 @@ if menu=="Content-Based":
     tab1, tab2= st.tabs(["Chọn sản phẩm", "Gõ từ khóa liên quan đến SP"])
     with tab1:
         ###### Giao diện Streamlit ######
-        st.image('hasaki_banner.jpg', use_container_width=True)
+        st.image('hasaki_banner.jpg')
         # Tạo một dropdown với options là các tuple này
         selected_product = st.selectbox(
             "Chọn sản phẩm",
@@ -185,12 +185,12 @@ if menu=="Content-Based":
                 st.write('##### Các sản phẩm liên quan:')
                 recommendations = get_recommendations(df_products, st.session_state.selected_ma_san_pham, cosine_sim, nums=5) 
                 display_recommended_products(recommendations, cols=5)
-                st.image('top_10_best_sellers_updated.png', use_container_width=True)
+                st.image('top_10_best_sellers_updated.png')
             else:
                 st.write(f"Không tìm thấy sản phẩm với ID: {st.session_state.selected_ma_san_pham}")
     with tab2:
         ###### Giao diện Streamlit ######
-        st.image('HASAKI_5.jpg', use_container_width=True)
+        st.image('HASAKI_5.jpg')
         user_input = st.text_input("Nhập từ khóa sản phẩm cần tìm:")
         min_rating = 4.5
 
@@ -201,13 +201,13 @@ if menu=="Content-Based":
             else:
                 st.write("Các sản phẩm bạn có thể tham khảo:")
                 st.dataframe(recommendations)
-                st.image('top_10_best_sellers_updated.png', use_container_width=True)
+                st.image('top_10_best_sellers_updated.png')
 #phần 2 Collaborative
 else:
     
     st.header("Collaborative Filtering")
     ###### Giao diện Streamlit ######
-    st.image('HASAKI_4.jpg', use_container_width=True)
+    st.image('HASAKI_4.jpg')
     #đọc file
     
     df=pd.read_csv('Processing_Danh_gia_HASAKI_VS5.csv')
@@ -340,10 +340,10 @@ else:
                             st.write("##### Thông tin:")
                             st.write(truncated_description, '...')
                             
-                    st.image('top10KM.png', use_container_width=True)        
+                    st.image('top10KM.png')        
                 else: # user mới tạo tài khoản chưa có data thể recommend thì gửi ds top sp
-                    st.image('top10KM.png', use_container_width=True)
-                    st.image('top_10_best_sellers_updated.png', use_container_width=True)
+                    st.image('top10KM.png')
+                    st.image('top_10_best_sellers_updated.png')
 
                     # Tạo một dropdown với options là các tuple này
                     df_products_filtered = df_products[df_products['diem_trung_binh'] >= 4.5]
