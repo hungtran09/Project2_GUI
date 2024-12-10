@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run hasaki_app.py
+web: sh setup.sh && streamlit run gui_2.py
